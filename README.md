@@ -25,6 +25,7 @@ KSA 정보부의 허락을 받지 않았다면 사용하지 않으실 것을 강
 
 * Make GUI | Language option / Ask ID & PW / Select sleep time for each board
 * If user_id or user_pw contains \n, it might cause error
+* auth.py does not concerned with authentication
 
 <!-- LICENSE -->
 ## License
