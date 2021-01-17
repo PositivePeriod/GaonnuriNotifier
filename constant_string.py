@@ -1,40 +1,25 @@
-from tkinter import Tk, StringVar, ttk, Button
+program_name = 'Gaonnuri Notifier'
 
+file_path = './data'
+icon_file_path = './data/icon.ico'
+info_file_path = './data/info.txt'
+board_file_path = './data/board/'
 
-class Translator:
-    def __init__(self):
-        self.language = None
-        self.window = Tk()
-        self.window.title('Gaonnuri Notifier')
-        self.window.geometry(f'300x50+{self.window.winfo_screenwidth()//2-150}+{self.window.winfo_screenheight()//2-75}')
-        self.window.resizable(False, False)
-        self.window.iconbitmap('./data/icon.ico')
-        string = StringVar()
-        combobox = ttk.Combobox(textvariable=string, width=20, state='readonly')
-        combobox['value'] = ('한글', 'English')
-        combobox.current(0)
+base_url = 'https://gaonnuri.ksain.net'
+main_url = f'{base_url}/xe'
+login_url = f'{main_url}/login'
+boards = {'공지사항 게시판': 'board_notice', '임시 게시판': 'board_LoAj77', '규정 게시판': 'board_KbST22',
+          '자유 게시판': 'board_free', '분실물 게시판': 'board_lostfound', '선발 공모 게시판': 'board_select',
+          '학생회 말말말': 'board_jMJE99', '입시 정보 게시판': 'board_entrance', '수리 요청 게시판': 'board_repair'}
 
-        def click():
-            self.language = string.get()
-        click_button = Button(text='Choose', command=click)
-        combobox.pack(fill='both')
-        click_button.pack()
-        self.window.mainloop()
-        print(self.language)
+boards_info = {'공지사항 게시판': ('번호', '분류', '제목', '날짜', '조회수'),
+               '임시 게시판': ('번호', '제목', '글쓴이', '날짜', '조회수'),
+               '규정 게시판': ('번호', '제목', '글쓴이', '날짜', '조회수'),
+               '자유 게시판': ('번호', '제목', '아이디', '글쓴이', '날짜', '조회수'),
+               '분실물 게시판': ('번호', '분류', '제목', '글쓴이', '날짜', '조회수'),
+               '선발 공모 게시판': ('번호', '제목', '글쓴이', '날짜', '마감기한', '조회수'),
+               '학생회 말말말': ('번호', '분류', '제목', '날짜', '조회수'),
+               '입시 정보 게시판': ('번호', '제목', '날짜'),
+               '수리 요청 게시판': ('번호', '분류', '제목', '글쓴이', '날짜', '조회수')}
 
-
-start = "가온누리 알리미 서비스가 시작됩니다 :)"
-login_failure = "아이디나 비밀번호가 틀렸습니다 :("
-write_again = "다시 입력해 주세요"
-
-
-def welcome(user_name):
-    return f'{user_name}님 환영합니다'
-
-
-header_login_success = '''<?xml version="1.0" encoding="UTF-8"?>
-<response>
-<error>0</error>
-<message>success</message>
-<message_type></message_type>
-</response>'''
+boards_url = dict(zip(boards.keys(), [f'{main_url}/index.php?mid={board}&page=' for board in boards.values()]))

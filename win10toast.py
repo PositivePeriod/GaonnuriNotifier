@@ -2,9 +2,6 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-__all__ = ['ToastNotifier']
-
-
 # standard library
 import logging
 import threading
@@ -172,15 +169,12 @@ class ToastNotifier(object):
         return None
 
 
-import webbrowser
-
-
-def web():
-    webbrowser.open('https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string')
-
-
 if __name__ == "__main__":
-    # Example
+    import webbrowser
+
+    def web():
+        webbrowser.open('https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string')
     toaster = ToastNotifier()
-    toaster.show_toast("Hello World!!!", "Python is 10 seconds awsm!", duration=5, callback_on_click=web, threaded=True)
-    toaster.show_toast("Example two", "Once you start coding in Python you'll hate other languages", icon_path='data/icon.ico', threaded=True)
+    toaster.show_toast("Hello World!!!", "Python is awesome!", duration=5, callback_on_click=web, threaded=True)
+    toaster.show_toast("Example two", "Once you start coding in Python you'll hate other languages",
+                       icon_path='data/icon.ico', threaded=True)
