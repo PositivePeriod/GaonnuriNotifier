@@ -1,0 +1,146 @@
+{
+    "filePath": {
+        "basePath": "./private",
+        "boardPath": "./private/board/",
+        "infoPath": "./private/info.txt",
+        "iconPath": "./public/icon.ico"
+    },
+    "URL": {
+        "baseUrl": "https://gaonnuri.ksain.net",
+        "mainUrl": "https://gaonnuri.ksain.net/xe",
+        "loginUrl": "https://gaonnuri.ksain.net/login"
+    },
+    "board": {
+        "name": {
+            "공지사항 게시판": "board_notice",
+            "임시 게시판": "board_LoAj77",
+            "규정 게시판": "board_KbST22",
+            "자유 게시판": "board_free",
+            "분실물 게시판": "board_lostfound",
+            "선발 공모 게시판": "board_select",
+            "입시 정보 게시판": "board_entrance",
+            "수리 요청 게시판": "board_repair",
+            "연구회 게시판": "board_research",
+            "학년 교류 게시판": "board_DPpO59",
+            "학운위 공지사항": "board_stunionreport",
+            "학생회 건의 게시판": "proposal"
+        },
+        "itemOrder": {
+            "공지사항 게시판": [
+                "번호",
+                "분류",
+                "제목",
+                "날짜",
+                "조회수"
+            ],
+            "임시 게시판": [
+                "번호",
+                "제목",
+                "글쓴이",
+                "날짜",
+                "조회수"
+            ],
+            "규정 게시판": [
+                "번호",
+                "제목",
+                "글쓴이",
+                "날짜",
+                "조회수"
+            ],
+            "자유 게시판": [
+                "번호",
+                "제목",
+                "아이디",
+                "글쓴이",
+                "날짜",
+                "조회수"
+            ],
+            "분실물 게시판": [
+                "번호",
+                "분류",
+                "제목",
+                "글쓴이",
+                "날짜",
+                "조회수"
+            ],
+            "선발 공모 게시판": [
+                "번호",
+                "제목",
+                "글쓴이",
+                "날짜",
+                "마감기한",
+                "조회수"
+            ],
+            "입시 정보 게시판": [
+                "번호",
+                "제목",
+                "날짜"
+            ],
+            "수리 요청 게시판": [
+                "번호",
+                "분류",
+                "제목",
+                "글쓴이",
+                "날짜",
+                "조회수"
+            ],
+            "연구회 게시판": [
+                "번호",
+                "제목",
+                "글쓴이",
+                "날짜",
+                "마감기한",
+                "조회수"
+            ],
+            "학년 교류 게시판": [
+                "번호",
+                "제목",
+                "글쓴이",
+                "날짜",
+                "조회수"
+            ],
+            "학운위 공지사항": [
+                "번호",
+                "분류",
+                "제목",
+                "글쓴이",
+                "날짜",
+                "조회수"
+            ],
+            "학생회 건의 게시판": [
+                "번호",
+                "분류",
+                "제목",
+                "글쓴이",
+                "날짜",
+                "조회수"
+            ]
+        }
+    },
+    "sentence": {
+        "ko": {
+            "enterID": "가온누리 아이디를 입력해 주세요",
+            "enterPW": "가온누리 비밀번호를 입력해 주세요",
+            "start": "가온누리 알리미 서비스가 시작되었어요 ʕ•ﻌ•ʔ",
+            "wrongID": "잘못된 아이디를 입력했어요 °ロ°",
+            "wrongPW": "잘못된 비밀번호를 입력했어요 °ロ°",
+            "writeAgain": "다시 입력해 주세요",
+            "noIcon": "아이콘을 찾을 수 없어요",
+            "wishNoProblem": "큰 문제가 없길 바라볼게요 ᕕ( ᐛ )ᕗ",
+            "close": "알리미를 종료할게요 ʕ•ﻌ•ʔ",
+            "seeYouLater": "나중에 또 봐요"
+        },
+        "en": {
+            "enterID": "Enter your Gaonnuri Account",
+            "enterPW": "Enter your Gaonnuri Password",
+            "start": "Gaonnuri Notifier begins to work for you ʕ•ﻌ•ʔ",
+            "wrongID": "Wrong ID °ロ°",
+            "wrongPW": "Wrong Password °ロ°",
+            "writeAgain": "Please enter again",
+            "noIcon": "Icon cannot be found",
+            "wishNoProblem": "I wish there's no problem ᕕ( ᐛ )ᕗ",
+            "close": "Notifier is closing ʕ•ﻌ•ʔ",
+            "seeYouLater": "See you later"
+        }
+    }
+}
