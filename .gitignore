@@ -2,6 +2,7 @@ venv
 __pycache__
 .idea
 .vscode
-info.txt
-data/info.txt
-data/board
+
+notifier/private
+
+prac
