@@ -20,6 +20,8 @@ KSA 정보부의 허락을 받지 않았다면 사용하지 않으실 것을 강
 코드는 실제 사용보다는 연구 목적으로 개발하여 올린 것입니다
 경고를 무시하고 사용하여 일어난 결과에 대해서 개발자는 어떠한 책임도 지지 않습니다
 
+JSON Formatting in vsc; [Shift+Alt+F](https://code.visualstudio.com/docs/languages/json)
+
 <!-- ROADMAP -->
 ## Roadmap
 
