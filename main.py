@@ -42,6 +42,9 @@ def ask_login_info():
     while not login:
         user_id = simpledialog.askstring(program_name, enter_id)
         user_pw = simpledialog.askstring(program_name, enter_pw)
+        if user_id is None and user_pw == None:
+            import sys
+            sys.exit('Stop the program')
         login = login_success(user_id, user_pw)
         if not login:
             toast(login_failure, write_again, duration=1)
@@ -64,4 +67,8 @@ if __name__ == '__main__':
         if not success:
             toast(login_failure, write_again)
             break
-        time.sleep(600)
+        sleep_time = 300
+        print(f'Sleep for {sleep_time}s')
+        time.sleep(sleep_time)
+
+# 글 읽는 순서가 거꾸로임  
