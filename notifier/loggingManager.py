@@ -6,10 +6,10 @@ with open(loggingPath, 'a') as f:
 
 logger = logging.getLogger()
 
-formatType = '%(asctime)s | %(levelname)8s | %(filename)s-%(funcName)s-%(lineno)s | %(message)s'
+formatType = '%(asctime)s | %(levelname)8s | %(filename)s - %(funcName)s - %(lineno)s | %(message)s'
 formatter = logging.Formatter(formatType)
 
-fileHandler = logging.FileHandler(loggingPath)
+fileHandler = logging.FileHandler(loggingPath, encoding='UTF-8')
 fileHandler.setFormatter(formatter)
 logger.addHandler(fileHandler)
 
