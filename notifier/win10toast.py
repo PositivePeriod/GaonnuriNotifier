@@ -80,7 +80,8 @@ class ToastNotifier(object):
         self.wc = WNDCLASS()
         self.hinst = self.wc.hInstance = GetModuleHandle(None)
         self.wc.lpszClassName = str("PythonTaskbar")  # must be a string
-        self.wc.lpfnWndProc = self._decorator(self.wnd_proc, callback_on_click)  # could instead specify simple mapping
+        # could instead specify simple mapping
+        self.wc.lpfnWndProc = self._decorator(self.wnd_proc, callback_on_click)
         try:
             self.classAtom = RegisterClass(self.wc)
         except Exception as e:
@@ -131,7 +132,8 @@ class ToastNotifier(object):
         :duration: delay in seconds before notification self-destruction, None for no-self-destruction
         """
         if not threaded:
-            self._show_toast(title, msg, icon_path, duration, callback_on_click)
+            self._show_toast(title, msg, icon_path,
+                             duration, callback_on_click)
         else:
             if self.notification_active():
                 # We have an active notification, let is finish so we don't spam them
@@ -171,9 +173,16 @@ class ToastNotifier(object):
 
 if __name__ == "__main__":
     import webbrowser
+
     def web():
-        webbrowser.open('https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string')
+        webbrowser.open(
+            'https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string')
+
+    with open('./notifier/public/constant.json', encoding="UTF-8") as jsonFile:
+        iconPath = json.load(jsonFile)["filePath"]["iconPath"]
+
     toaster = ToastNotifier()
-    toaster.show_toast("Hello World!!!", "Python is awesome!", duration=5, callback_on_click=web, threaded=True)
+    toaster.show_toast("Hello World!!!", "Python is awesome!",
+                       duration=5, callback_on_click=web, threaded=True)
     toaster.show_toast("Example two", "Once you start coding in Python you'll hate other languages",
-                       icon_path=, threaded=True)
+                       icon_path=iconPath, threaded=True)
